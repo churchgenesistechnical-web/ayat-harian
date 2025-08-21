@@ -6,44 +6,25 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #fff;
-      margin: 0;
-    }
-    .popup {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.5);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .popup-content {
-      background: #f0f0f0;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-      max-width: 400px;
       text-align: center;
+      padding: 20px;
+      background: #ffffff; /* Putih */
+      color: #333;
     }
-    .close-btn {
-      margin-top: 10px;
-      padding: 6px 12px;
-      border: none;
-      background: #333;
-      color: white;
-      border-radius: 6px;
-      cursor: pointer;
+    .box {
+      background: #f0f0f0; /* Abu-abu terang */
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      max-width: 500px;
+      margin: auto;
     }
   </style>
 </head>
 <body>
-  <div class="popup" id="popup">
-    <div class="popup-content">
-      <h3>📖 Ayat Hari Ini</h3>
-      <p id="ayat"></p>
-      <button class="close-btn" onclick="document.getElementById('popup').style.display='none'">Tutup</button>
-    </div>
+  <div class="box">
+    <h3>📖 Ayat Hari Ini</h3>
+    <p id="ayat"></p>
   </div>
 
   <script>
@@ -51,11 +32,38 @@
       "Mazmur 23:1 - TUHAN adalah gembalaku, takkan kekurangan aku.",
       "Yohanes 3:16 - Karena begitu besar kasih Allah akan dunia ini...",
       "Filipi 4:13 - Segala perkara dapat kutanggung di dalam Dia...",
-      // tambah sampai 30 ayat
+       "Yeremia 29:11 - Sebab Aku ini mengetahui rancangan-rancangan apa yang ada pada-Ku mengenai kamu, demikianlah firman TUHAN.",
+      "Roma 8:28 - Allah turut bekerja dalam segala sesuatu untuk mendatangkan kebaikan bagi mereka yang mengasihi Dia.",
+      "Mazmur 46:2 - Allah itu bagi kita tempat perlindungan dan kekuatan, sebagai penolong dalam kesesakan sangat terbukti.",
+      "Yesaya 41:10 - Janganlah takut, sebab Aku menyertai engkau.",
+      "Mazmur 91:1 - Orang yang duduk dalam lindungan Yang Mahatinggi dan bermalam dalam naungan Yang Mahakuasa.",
+      "Amsal 3:5 - Percayalah kepada TUHAN dengan segenap hatimu, dan janganlah bersandar kepada pengertianmu sendiri.",
+      "Yosua 1:9 - Kuatkan dan teguhkanlah hatimu, jangan kecut dan tawar hati, sebab TUHAN, Allahmu, menyertai engkau.",
+      "Mazmur 37:4 - Dan bergembiralah karena TUHAN; maka Ia akan memberikan kepadamu apa yang diinginkan hatimu.",
+      "Yesaya 40:31 - Tetapi orang-orang yang menanti-nantikan TUHAN mendapat kekuatan baru.",
+      "Roma 12:12 - Bersukacitalah dalam pengharapan, sabarlah dalam kesesakan, dan bertekunlah dalam doa!",
+      "2 Korintus 5:7 - Sebab hidup kami ini adalah karena percaya, bukan karena melihat.",
+      "Mazmur 121:1-2 - Aku melayangkan mataku ke gunung-gunung; dari manakah akan datang pertolonganku? Pertolonganku ialah dari TUHAN.",
+      "Matius 11:28 - Marilah kepada-Ku, semua yang letih lesu dan berbeban berat, Aku akan memberi kelegaan kepadamu.",
+      "Mazmur 34:9 - Kecaplah dan lihatlah, betapa baiknya TUHAN itu!",
+      "1 Tesalonika 5:16 - Bersukacitalah senantiasa.",
+      "Mazmur 55:23 - Serahkanlah kuatirmu kepada TUHAN, maka Ia akan memelihara engkau.",
+      "Efesus 6:10 - Hendaklah kamu kuat di dalam Tuhan, di dalam kekuatan kuasa-Nya.",
+      "1 Petrus 5:7 - Serahkanlah segala kekuatiranmu kepada-Nya, sebab Ia yang memelihara kamu.",
+      "Yesaya 26:3 - Yang hatinya teguh Kaujagai dengan damai sejahtera, sebab kepada-Mulah ia percaya.",
+      "Mazmur 100:5 - Sebab TUHAN itu baik, kasih setia-Nya untuk selama-lamanya.",
+      "Roma 15:13 - Semoga Allah sumber pengharapan memenuhi kamu dengan segala sukacita dan damai sejahtera.",
+      "Ulangan 31:6 - Kuatkan dan teguhkanlah hatimu, jangan takut dan jangan gemetar.",
+      "Mazmur 118:24 - Inilah hari yang dijadikan TUHAN, marilah kita bersorak-sorak dan bersukacita karenanya.",
+      "Ratapan 3:22-23 - Tak berkesudahan kasih setia TUHAN, tak habis-habisnya rahmat-Nya.",
+      "2 Timotius 1:7 - Sebab Allah memberikan kepada kita bukan roh ketakutan, melainkan roh yang membangkitkan kekuatan.",
+      "Mazmur 27:1 - TUHAN adalah terangku dan keselamatanku, kepada siapakah aku harus takut?",
+      "Filipi 4:6 - Janganlah hendaknya kamu khawatir tentang apa pun juga, tetapi nyatakanlah dalam segala hal keinginanmu kepada Allah dalam doa."
+      // tambahkan sampai 30 ayat
     ];
 
     const today = new Date();
-    const day = today.getDate();
+    const day = today.getDate(); // tanggal 1–31
     const index = (day - 1) % ayatList.length;
     document.getElementById("ayat").innerText = ayatList[index];
   </script>
