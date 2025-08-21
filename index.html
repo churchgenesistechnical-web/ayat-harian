@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Ayat Harian</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      background: #f9f9f9;
+      color: #333;
+    }
+    .box {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      max-width: 500px;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h3>📖 Ayat Hari Ini</h3>
+    <p id="ayat"></p>
+  </div>
+
+  <script>
+    const ayatList = [
+      "Mazmur 23:1 - TUHAN adalah gembalaku, takkan kekurangan aku.",
+      "Yohanes 3:16 - Karena begitu besar kasih Allah akan dunia ini...",
+      "Filipi 4:13 - Segala perkara dapat kutanggung di dalam Dia...",
+      // tambahkan sampai 30 ayat
+    ];
+
+    const today = new Date();
+    const day = today.getDate(); // tanggal 1–31
+    const index = (day - 1) % ayatList.length;
+    document.getElementById("ayat").innerText = ayatList[index];
+  </script>
+</body>
+</html>
